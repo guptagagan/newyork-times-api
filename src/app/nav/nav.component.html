@@ -1,0 +1,51 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" text-align>
+  <div class="container px-5">
+
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="assets\d8a347b41db1ddee634e2d67d08798c102ef09ac.jpg" width="45" height="45" alt="">
+      </a>
+    </nav>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  ms-auto">
+        <li class="nav-item px-3"><a class="nav-link text-black" type="submit" routerLink="">Home</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="art">Arts</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="world">World</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="science">Science</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="us">US</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="tech">Tech</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="Politics">Politics</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="business">Business</a></li>
+        <li class="nav-item px-3"><a class="nav-link text-black" routerLink="cinema">Cinema</a></li>
+
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm" (submit)="submitForm()">
+        <input class="form-control" formControlName="searchresult" type="text" placeholder="Search" aria-label="Search">
+        &nbsp; &nbsp;
+
+        <!-- <input type="submit"  class="btn btn-outline-secondary my-2 my-sm-0 text-white" value="Search">
+  </form> -->
+        <a routerLink="searchresult" type="submit" class="btn btn-outline-secondary my-2 my-sm-0 text-black"> Search</a>
+      </form>
+
+    </div>
+  </div>
+</nav>
+
+
+<div class="container" *ngFor="let result of searchList">
+  <!-- <app-card [name]="product.name" [region]="product.region" [flag]="product.flag" [population] ="product.population.toString()" ></app-card>
+ 
+  <div ></div> -->
+  <app-search-result [abstract]="result.abstract" [lead_paragraph]="result.lead_paragraph" [source]="result.source">
+  </app-search-result>
+
+</div>
+</nav>
